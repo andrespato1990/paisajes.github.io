@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0d5353;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    padding-top: 80px;
+    margin-top: 20; 
+    color: #e1e3e9;
+    font-family: 'Impact', Helvetica;
+    text-shadow: 2px 2px 5px rgba(24, 1, 4, 0.966), 4px 4px 10px rgba(20, 1, 1, 0.5);
+    letter-spacing: 2px;
+}
+  .ctr-accordion {
+    width: 100%;
+    height: 500px; /* Aumenta la altura total del contenedor */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+    gap: 5px;
+    overflow: hidden;
+    margin: 100px auto;
+  }
+  .tab {
+    position: relative;
+    width: 15%;
+    height: inherit;
+    padding: 20px;
+    cursor: pointer;
+    transition: width 0.5s ease, opacity 0.5s ease; /* Añade transición para la opacidad */
+    border-radius: 20px;
+    flex-grow: 1;
+    opacity: 0.3; /* Las imágenes no seleccionadas se muestran con opacidad reducida */
+   
+  }
+  .tab img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    border-radius: 20px;
+  }
+  .tab:hover {
+    width: 50%; /* Al pasar el mouse, se expande al 50% del contenedor */
+  }
+  
+  /* Estilos para el texto del nombre del juego */
+  .tab .Lugares {
+    position:relative;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-60%);
+    color: white;
+    background-color: rgba(190, 156, 228, 0.7);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 3s ease;
+    pointer-events: none;
+    
+  }
+  
+  /* Al hacer hover sobre la pestaña, muestra el texto */
+  .tab:hover .Lugares {
+    opacity: 1;
+  }
+  .tab:hover {
+    width: 40%; /* Ancho al hacer hover */
+    opacity: 1; /* Vuelve la opacidad a 100% al pasar el cursor */
+  }
+  .tab:hover img {
+    opacity: 1; /* Imagen  nítida */
+  }
